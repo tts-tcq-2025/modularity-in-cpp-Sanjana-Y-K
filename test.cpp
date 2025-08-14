@@ -4,9 +4,7 @@
 
 using namespace TelCoColorCoder;
 
-static void testNumberToPair(int pairNumber,
-                             MajorColor expectedMajor,
-                             MinorColor expectedMinor) {
+static void testNumberToPair(int pairNumber,MajorColor expectedMajor,MinorColor expectedMinor) {
     ColorPair colorPair = GetColorFromPairNumber(pairNumber);
     std::cout << "Testing Number → Pair: " << pairNumber
               << " | Got: " << colorPair.ToString() << "\n";
@@ -14,8 +12,7 @@ static void testNumberToPair(int pairNumber,
     assert(colorPair.getMinor() == expectedMinor);
 }
 
-static void testPairToNumber(MajorColor major, MinorColor minor,
-                              int expectedPairNumber) {
+static void testPairToNumber(MajorColor major, MinorColor minor,int expectedPairNumber) {
     int pairNumber = GetPairNumberFromColor(major, minor);
     std::cout << "Testing Pair → Number: "
               << ColorPair(major, minor).ToString()
