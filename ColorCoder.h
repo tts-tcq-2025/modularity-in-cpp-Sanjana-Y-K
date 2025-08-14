@@ -1,35 +1,30 @@
-#ifndef COLORCODER_H
-#define COLORCODER_H
+#ifndef TELCO_COLORCODER_H_
+#define TELCO_COLORCODER_H_
 
 #include <string>
 
-namespace TelCoColorCoder
-{
-    enum MajorColor { WHITE, RED, BLACK, YELLOW, VIOLET };
-    enum MinorColor { BLUE, ORANGE, GREEN, BROWN, SLATE };
+namespace TelCoColorCoder {
 
-    extern const char* MajorColorNames[];
-    extern const int numberOfMajorColors;
-    extern const char* MinorColorNames[];
-    extern const int numberOfMinorColors;
+enum MajorColor { WHITE, RED, BLACK, YELLOW, VIOLET };
+enum MinorColor { BLUE, ORANGE, GREEN, BROWN, SLATE };
 
-    class ColorPair
-    {
-    private:
-        MajorColor majorColor;
-        MinorColor minorColor;
+class ColorPair {
+private:
+    MajorColor majorColor;
+    MinorColor minorColor;
 
-    public:
-        ColorPair(MajorColor major, MinorColor minor);
-        MajorColor getMajor() const;
-        MinorColor getMinor() const;
-        std::string ToString() const;
-    };
+public:
+    ColorPair(MajorColor major, MinorColor minor);
 
-    ColorPair GetColorFromPairNumber(int pairNumber);
-    int GetPairNumberFromColor(MajorColor major, MinorColor minor);
+    MajorColor getMajor() const;  
+    MinorColor getMinor() const;   
+    std::string ToString() const;  
+};
 
-    void PrintColorCodeManual();
-}
+ColorPair GetColorFromPairNumber(int pairNumber);
 
-#endif // COLORCODER_H
+int GetPairNumberFromColor(MajorColor major, MinorColor minor);
+
+}  // namespace TelCoColorCoder
+
+#endif // TELCO_COLORCODER_H_
